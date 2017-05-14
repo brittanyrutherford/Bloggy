@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Awesome Blog - Home</title>
+    <script type="text/javascript" src="/bundle.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-area">
+                <h1 class="linkable">Awesome Blog</h1>
+                <div class="logo-underline"></div>
+                <h4 class="linkable">Created By A Passionate Developer</h4>
+            </div>
+
+        </div>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="#">Home</a></li>
+                <li class="nav-item"><a href="#">Angular JS</a></li>
+                <li class="nav-item"><a href="#">NodeJS Articles</a></li>
+                <li class="nav-item"><a href="#">About Me</a></li>
+                <li class="nav-item"><a href="#">Contact Me</a></li>
+            </ul>
+        </nav>
+        <input type="text" id="txtSearchPosts" placeholder="Search by title">
+        <div class="content">
+            <main>
+                    {{#each posts}}
+                <section class="article">
+               <a href="#"><h2> {{postTitle}} </h2></a>
+               <p>{{postDate}} - by <a href="#">{{author}} </a> - 
+               <a href="#">({{commentsCount}}) Comments</a></p>
+               <p> {{postContent}}
+<a href="#">Read More</a></p>
+              </section>
+   {{/each}}
+            </main>
+              <aside>
+                    <p>hello </p>
+            </aside>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+ 
+</body>
+
+</html>

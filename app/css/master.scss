@@ -1,0 +1,123 @@
+$main-bg-color: #291818;
+$red-bg-color: #FC0909;
+$text-color: #FECCBA;
+$centralcontent-bg-color: #342D2D;
+@mixin master-align {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+@mixin main-aside{
+        padding: 5px 5px 5px 10px;
+                background-color: $centralcontent-bg-color;
+                border-radius: 10px;
+                float: left;
+                
+        
+}
+
+ ::-webkit-input-placeholder {
+    /* Chrome */
+    color: $text-color;
+}
+
+ :-ms-input-placeholder {
+    /* IE 10+ */
+    color: $text-color;
+}
+
+ ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $text-color;
+}
+
+ :-moz-placeholder {
+    /* Firefox 4 - 18 */
+    color: $text-color;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: $main-bg-color;
+    box-sizing: border-box;
+    font-family: Lato ;
+    color: $text-color;
+    textarea,
+    input,
+    button,
+    select {
+        font-family: inherit;
+    }
+    .container {
+       
+        overflow: auto;
+        margin-top: 65px;
+        min-height: 100%;
+        .header {
+            @include master-align();
+            .logo-area {
+                line-height: 0.1;
+                h1 {
+                    font-size: 50px;
+                }
+                .logo-underline {
+                    width: 22%;
+                    height: 1px;
+                    background-color: $red-bg-color;
+                }
+                h4 {
+                    font-size: 20px;
+                }
+            }
+        }
+        nav {
+            margin-top: 38px;
+            background-color: $red-bg-color;
+            height: 30px;
+            ul {
+                width: 80%;
+                margin: auto;
+                padding: 4px 0;
+                list-style-type: none;
+                li {
+                    width: 10%;
+                    float: left;
+                }
+            }
+        }
+        #txtSearchPosts {
+            background-color: $main-bg-color;
+            color: $text-color;
+            position: absolute;
+            top: 207px;
+            left: 1363px;
+            padding: 2px;
+            width: 200px;
+        }
+        .content {
+            @include master-align();
+            margin-top: 50px;
+            main {
+                width: 60%;
+               @include main-aside()
+                
+            }
+            aside {
+                width: 30%;
+                margin-left: 4%;
+                @include main-aside();
+            }
+            .clear{
+                clear: both;
+            }
+        }
+    }
+    .linkable,
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+}
