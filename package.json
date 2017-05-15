@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^7.0.18",
     "css-loader": "^0.28.1",
     "node-sass": "^4.5.2",
     "sass-loader": "^6.0.5",
