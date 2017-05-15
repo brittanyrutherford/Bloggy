@@ -612,21 +612,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 __webpack_require__(0);
 document.addEventListener('DOMContentLoaded', function () {
     var btnSubmit = document.getElementById('submitpost');
+    function getInputValueOrDefault(inputId, defaultValue) {
+        var input = document.getElementById(inputId);
+        return input ? input.value : defaultValue;
+    }
     btnSubmit.addEventListener('click', function () {
-        var postTitle = document.getElementById('postTitle').value;
-        var postDate = document.getElementById('postDate').value;
-        var author = document.getElementById('author').value;
-        var commentsCount = document.getElementById('commentsCount').value;
-        var postContent = document.getElementById('postContent').value;
         fetch('http://localhost:3000/posts', {
             method: 'POST',
-            body: {
-                "postTitle": postTitle,
-                "postDate": postDate,
-                "author": author,
-                "commentsCount": commentsCount,
-                "postContent": postContent
-            }
+            headers: new Headers({ "Content-Type": "application/json" }),
+            body: JSON.stringify({
+                "postTitle": getInputValueOrDefault('postTitle', 'Default Title'),
+                "postDate": getInputValueOrDefault('postDate', 'Default date'),
+                "author": getInputValueOrDefault('author', 'Default author'),
+                "commentsCount": getInputValueOrDefault('commentsCount', 'Default commentsCount'),
+                "postContent": getInputValueOrDefault('postContent', 'Default postContent')
+            })
         }).then(function (res) { return res.json(); })
             .then(function (data) { return console.log(data); });
     });
